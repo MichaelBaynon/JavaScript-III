@@ -1,3 +1,6 @@
+//       rather then putting a method put a prototype ------- remember to bind to parent to receive traits ==============================================
+
+
 /*
   Object oriented design is commonly used in video games.  For this part of the assignment you will be implementing several constructor functions with their correct inheritance hierarchy.
 
@@ -26,11 +29,18 @@ GameObject.prototype.destroy = function () {
 */
 
 function CharacterStats(stats) {
+  GameObject.call(this, stats)
   this.healthPoints = stats.healthPoints;
-  // this.takenDamage() = stats.takenDamage();
-  // this.destroy() = stats.destroy();
+}
+CharacterStats.prototype = Object.create(GameObject.prototype) 
+
+CharacterStats.prototype.takenDamage = function () {
+  return `${this.stats}`
 
 }
+
+
+
 /*
   === CharacterStats ===
   * healthPoints
@@ -42,11 +52,11 @@ function Humanoid(human) {
   this.team = human.team;
   this.weapons = human.weapons;
   this.language = human.language;
-  // this.greet() = human.greet();
-  // this.destroy() = human.destroy();
-  // this.takemDamage() = human.takenDamage();
+   this.greet() = human.greet();
+   this.destroy() = human.destroy();
+   this.takenDamage() = human.takenDamage();
 }
-
+Humanoid.prototype.greet
 console.log(CharacterStats);
 console.log(Humanoid)
 /*
