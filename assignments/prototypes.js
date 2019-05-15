@@ -12,7 +12,9 @@ function GameObject(attributes) {
   this.createdAt = attributes.createdAt;
   this.name = attributes.name;
   this.dimensions = attributes.dimensions;
-  this.destroy() = attributes.destroy();
+}
+GameObject.prototype.destroy = function () {
+  return `${this.name} was removed from the game.`
 }
 
 /*
@@ -25,8 +27,8 @@ function GameObject(attributes) {
 
 function CharacterStats(stats) {
   this.healthPoints = stats.healthPoints;
-  this.takenDamage() = stats.takenDamage();
-  this.destroy() = stats.destroy();
+  // this.takenDamage() = stats.takenDamage();
+  // this.destroy() = stats.destroy();
 
 }
 /*
@@ -40,9 +42,9 @@ function Humanoid(human) {
   this.team = human.team;
   this.weapons = human.weapons;
   this.language = human.language;
-  this.greet() = human.greet();
-  this.destroy() = human.destroy();
-  this.takeDamage() = human.takeDamage();
+  // this.greet() = human.greet();
+  // this.destroy() = human.destroy();
+  // this.takemDamage() = human.takenDamage();
 }
 
 console.log(CharacterStats);
@@ -116,15 +118,15 @@ const archer = new Humanoid({
   language: 'Elvish',
 });
 
-console.log(mage.createdAt); // Today's date
-console.log(archer.dimensions); // { length: 1, width: 2, height: 4 }
-console.log(swordsman.healthPoints); // 15
-console.log(mage.name); // Bruce
-console.log(swordsman.team); // The Round Table
-console.log(mage.weapons); // Staff of Shamalama
-console.log(archer.language); // Elvish
-console.log(archer.greet()); // Lilith offers a greeting in Elvish.
-console.log(mage.takeDamage()); // Bruce took damage.
+// console.log(mage.createdAt); // Today's date
+// console.log(archer.dimensions); // { length: 1, width: 2, height: 4 }
+// console.log(swordsman.healthPoints); // 15
+// console.log(mage.name); // Bruce
+// console.log(swordsman.team); // The Round Table
+// console.log(mage.weapons); // Staff of Shamalama
+// console.log(archer.language); // Elvish
+// console.log(archer.greet()); // Lilith offers a greeting in Elvish.
+// console.log(mage.takeDamage()); // Bruce took damage.
 console.log(swordsman.destroy()); // Sir Mustachio was removed from the game.
 
 
